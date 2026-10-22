@@ -1,0 +1,6 @@
+# Never commit student data
+*.json
+!manifest.json
+*.xpi
+*.csv
+*.xlsx

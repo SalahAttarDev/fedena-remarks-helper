@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Fedena Remarks Helper",
+  "version": "1.2.0",
+  "description": "Export a class to JSON for AI, then paste the AI's JSON to fill every student's custom remark in Fedena.",
+  "permissions": [
+    "storage",
+    "clipboardWrite",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.fedena.com/remarks/add_employee_custom_remarks*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "panel.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "fedena-remarks-helper@local",
+      "strict_min_version": "109.0"
+    }
+  },
+  "action": {
+    "default_title": "Fedena Remarks Helper",
+    "default_popup": "popup.html"
+  }
+}
